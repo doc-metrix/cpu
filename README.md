@@ -16,5 +16,5 @@ CPU
 ---
 ## Copyright
 
-Copyright &copy; 2014. Nick Wei.
+Copyright &copy; 2014. [NodePrime](http://nodeprime.com).
 
