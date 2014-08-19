@@ -1,9 +1,22 @@
 CPU
 ===
 
+A specification for CPU performance metrics.
+
 
 ## Description
 
+
+## Contributing
+
+To contribute to this specification, see the contributing [guide](https://github.com/doc-metrix/contributing). Any updates to the specification should be tagged.
+
+``` bash
+$ git tag -a <major.minor.patch> -m "[UPDATE] version."
+$ git push origin <major.minor.patch>
+```
+
+Use [semantic versioning](http://semver.org/) (semvar) for communicating versions. For example, any new metrics should be communicated as `minor` updates, while any corrections should be `patches`. Any specification restructuring (changing field names, removing fields, etc) should be communicated as `major` updates.
 
 
 ## Usage
