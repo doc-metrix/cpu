@@ -1,28 +1,28 @@
 {
-	"name": "doc-metrix-cpu",
-	"version": "0.0.0",
-	"description": "Specification for CPU performance metrics.",
-	"authors": [
-		{
-			"name": "Athan Reines",
-			"email": "athan@nodeprime.com"
-		}
-	],
-	"main": "spec/index.json",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/doc-metrix/cpu.git"
-	},
-	"keywords": [
-		"doc-metrix",
-		"specification",
-		"cpu"
-	],
-	"dependencies": {},
-	"devDependencies": {},
-	"ignore": [
-		"TODO.md",
-		".*"
-	],
-	"license": "MIT"
+  "name": "doc-metrix-cpu",
+  "version": "0.0.1",
+  "description": "Specification for CPU performance metrics.",
+  "authors": [
+    {
+      "name": "Athan Reines",
+      "email": "athan@nodeprime.com"
+    }
+  ],
+  "main": "spec/index.json",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/doc-metrix/cpu.git"
+  },
+  "keywords": [
+    "doc-metrix",
+    "specification",
+    "cpu"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "ignore": [
+    "TODO.md",
+    ".*"
+  ],
+  "license": "MIT"
 }
