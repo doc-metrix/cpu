@@ -1,7 +1,7 @@
 {
   "name": "doc-metrix-cpu",
   "version": "0.0.1",
-  "description": "Specification for CPU performance metrics.",
+  "description": "A specification for CPU performance metrics.",
   "authors": [
     {
       "name": "Athan Reines",
@@ -16,7 +16,9 @@
   "keywords": [
     "doc-metrix",
     "specification",
-    "cpu"
+    "cpu",
+    "metrics",
+    "documentation"
   ],
   "dependencies": {},
   "devDependencies": {},
