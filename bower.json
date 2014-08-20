@@ -4,8 +4,8 @@
   "description": "A specification for CPU performance metrics.",
   "authors": [
     {
-      "name": "Athan Reines",
-      "email": "athan@nodeprime.com"
+      "name": "Andrew Krause",
+      "email": "andrew@nodeprime.com"
     }
   ],
   "main": "spec/index.json",
