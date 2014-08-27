@@ -1,1 +1,603 @@
-{}
+{
+  "cpu.cpu.guest": {
+    "display_name": "Guest Mode Percentage (Average)",
+    "units": "guest mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{guest}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.guest$",
+    "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) across all CPUs.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.guestNice": {
+    "display_name": "Nice Guest Mode Percentage (Average)",
+    "units": "nice guest mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{NiceGuest}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.guestNice$",
+    "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Nice_(Unix)"
+    ]
+  },
+  "cpu.cpu.idle": {
+    "display_name": "CPU Idle Percentage (Average)",
+    "units": "idleness",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{idle}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.idle$",
+    "description": "Average percentage of time spent idle across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.interrupts": {
+    "display_name": "Interrupts (Average)",
+    "units": "interrupts",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "\\sum_{cpu}n_{interrupt}",
+    "variants": "cpu\\.cpu\\.interrupts$",
+    "description": "Aggregate number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
+    "notes": "",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Interrupt"
+    ]
+  },
+  "cpu.cpu.iowait": {
+    "display_name": "I/O Wait Percentage (Average)",
+    "units": "io wait",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.iowait$",
+    "description": "Average percentage of time processors are waiting for I/O operations, across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.irq": {
+    "display_name": "Interrupt Mode Percentage (Average)",
+    "units": "interrupt mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\frac{t_{interrupt}}{t_{up}}",
+    "variants": "cpu.\\cpu\\.irq$",
+    "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.nice": {
+    "display_name": "User Nice Mode Percentage (Average)",
+    "units": "user nice mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\frac{t_{nice}}{t_{up}}",
+    "variants": "cpu.\\cpu\\.nice$",
+    "description": "Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Nice_(Unix)"
+    ]
+  },
+  "cpu.cpu.procsBlocked": {
+    "display_name": "Blocked Processes",
+    "units": "processes",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "\\sum_{cpu}n_{BlockedProcesses}",
+    "variants": "cpu\\.cpu\\.procsBlocked$",
+    "description": "Total number of processes waiting for I/O operations to complete, across all CPUs",
+    "notes": "",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.procsRunning": {
+    "display_name": "Running Processes",
+    "units": "processes",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "\\sum_{cpu}n_{RunningProcesses}",
+    "variants": "cpu\\.cpu\\.procsRunning$",
+    "description": "Total number of processes currently executing across all CPUs",
+    "notes": "",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.softirq": {
+    "display_name": "Software Interrupt Mode Percentage (Average)",
+    "units": "software interrupt mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{softirq}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.softirq$",
+    "description": "Average percentage of time spent dealing with software interrupts across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ] 
+  },
+  "cpu.cpu.steal" : {
+    "display_name": "CPU Steal Percentage (Average)",
+    "units": "CPU steal",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{steal}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.steal$",
+    "description": "Average percentage of time spent in \"involuntary wait\" across all CPUs. This is time that can't be classified in one of the other categories (e.g. system, idle, etc).",
+    "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.system": {
+    "display_name": "System Mode Percentage (Average)",
+    "units": "system mode",
+    "max": 1,
+    "min": 0, 
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{system}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.system$",
+    "description": "Average percentage of time spent executing processes in kernel mode, across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
+    },
+    "device": "cpu\\.(cpu)\\.cpu$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.cpu.user": {
+    "display_name": "User Mode Percentage (Average)",
+    "units": "user mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{user}}{t_{up}}",
+    "variants": "cpu\\.cpu\\.user$",
+    "description": "Average percentage of time spent executing processes in user mode, across all CPUs",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
+    },
+    "device": "cpu\\.(cpu)\\.user$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+        "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.guest": {
+    "display_name": "Guest Mode Percentage",
+    "units": "guest mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{guest}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.guest$",
+    "description": "Percentage of time spent running a virtual CPU for a guest OS (virual machine)",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.guest$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.guestNice": {
+    "display_name": "Nice Guest Mode Percentage",
+    "units": "nice guest mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{NiceGuest}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.guestNice$",
+    "description": "Percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relationship to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.guestNice$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Nice_(Unix)"
+    ]
+  },
+  "cpu.{cpucore}.idle": {
+    "display_name": "CPU Idle Percentage",
+    "units": "idleness",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{idle}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.idle$",
+    "description": "Percentage of time CPU spent idle",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.idle$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+        "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.interrupts": {
+    "display_name": "Interrupts",
+    "units": "interrupts",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "n_{interrupt}",
+    "variants": "cpu\\.cpu\\d+\\.interrupts$", 
+    "description": "Number of interrupts handled by CPU. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
+    "notes": "",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.interrupts$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Interrupt"
+    ]
+  },
+  "cpu.{cpucore}.iowait": {
+    "display_name": "I/O Wait Percentage",
+    "units": "io wait",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{io}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.iowait$",
+    "description": "Percentage of time processor is waiting for I/O operations to complete.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.iowait$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.irq": {
+    "display_name": "Interrupt Mode Percentage",
+    "units": "interrupt mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{irq}}{t_{up}}",
+    "variants": "cpu.\\cpu\\d+\\.irq$",
+    "description": "Percentage of time spent dealing with hardware interrupts",
+    "notes": "Time is measxured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.irq$",
+    "vendors": "*",
+    "classificiation": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.nice": {
+    "display_name": "User Nice Mode Percentage",
+    "units": "user nice mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{nice}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.nice$",
+    "description": "Percentage of time executing tasks in user mode with a positive nice value (tasks with a low priority).",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classificiation": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://en.wikipedia.org/wiki/Nice_(Unix)"
+    ]
+  },
+  "cpu.{cpucore}.procsBlocked": {
+    "display_name": "Blocked Processes",
+    "units": "processes blocked",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "n_{BlockedProcesses}",
+    "variants": "cpu\\.cpu\\d+\\.procsBlocked$",
+    "description": "Number of processes currently waiting for I/O operation to complete.",
+    "notes": "",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.procsBlocked$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.procsRunning": {
+    "display_name": "Running Processes",
+    "units": "processes running",
+    "max": "MAX_UNSIGNED_LONG",
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "count",
+    "type": "raw",
+    "formula": "n_{RunningProcesses}",
+    "variants": "cpu\\.cpu\\d+\\.procsRunning$",
+    "description": "Number of processes currently executing on processor.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.procsRunning$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.softirq": {
+    "display_name": "Software Interrupt Mode Percentage",
+    "units": "software interrupt mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{softirq}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.softirq$",
+    "description": "Percentage of time spent dealing with software interrupts",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.softirq$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ] 
+  },
+  "cpu.{cpucore}.steal": {
+    "display_name": "CPU Steal Percentage",
+    "units": "CPU steal",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{steal}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.steal$",
+    "description": "Average percentage of time spent in \"involuntary wait\". This is time that can't be classified in one of the other categories (e.g. system, idle, etc).",
+    "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/uptime"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.steal$",
+    "vendors": "*",
+    "classification": "*",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpuscore}.system": {
+    "display_name": "System Mode Percentage",
+    "units": "system mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage", 
+    "type": "derived",
+    "formula": "\\frac{t_{system}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.system$",
+    "description": "Percentage of time processor has spent executing in kernel mode.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.system$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.{cpucore}.user": {
+    "display_name": "User Mode Percentage",
+    "units": "user mode",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "\\frac{t_{user}}{t_{up}}",
+    "variants": "cpu\\.cpu\\d+\\.user$",
+    "description": "Percentage of time spent executing processes in user mode.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
+    "source": {
+      "LinuxKernel": ["/proc/stat", "/proc/cpuinfo"]
+    },
+    "device": "cpu\\.(cpu\\d+)\\.user$",
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.utilization": {
+    "display_name": "CPU Utilization",
+    "units": "utilization",
+    "max": 1,
+    "min": 0,
+    "sig_figs": null,
+    "data_type": "percentage",
+    "type": "derived",
+    "formula": "1 - \\frac{t_{2, idle} - t_{1, idle}}{\\Delta t}",
+    "variants": "cpu\\.cpu\\.utilization$",
+    "description": "Percentage of the CPU's processing resources used between two timepoints.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nThere are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.",
+    "source": {
+      "LinuxKernel": ["/proc/stat"]
+    },
+    "device": null,
+    "vendors": "*",
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://www.design-reuse.com/articles/8289/how-to-calculate-cpu-utilization.html"
+    ]
+  }
+}
