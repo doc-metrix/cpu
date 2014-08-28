@@ -7,7 +7,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{guest}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{guest}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{guest}": {
+          "description": "Amount of time spent in guest mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.guest$",
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -29,7 +42,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{NiceGuest}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{NiceGuest}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{NiceGuest}": {
+          "description": "Amount of time spent in niced guest mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.guestNice$",
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
@@ -52,7 +78,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{idle}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{idle}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{idle}": {
+          "description": "Amount of time spent in idle mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.idle$",
     "description": "Average percentage of time spent idle across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -74,7 +113,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "\\sum_{cpu}n_{interrupt}",
+    "formula": {
+      "equation": "\\sum_{cpu}n_{interrupt}",
+      "variables": {
+        "n_{interrupt}": {
+            "description": "Number of interrupts"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.interrupts$",
     "description": "Aggregate number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
     "notes": "",
@@ -97,7 +143,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{idle}": {
+          "description": "Amount of time spent waiting for I/O operations"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.iowait$",
     "description": "Average percentage of time processors are waiting for I/O operations, across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -119,7 +178,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\frac{t_{interrupt}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\frac{t_{interrupt}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{irq}": {
+          "description": "Amount of time spent processing hardware interrupts"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu.\\cpu\\.irq$",
     "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
@@ -141,7 +213,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\frac{t_{nice}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\frac{t_{nice}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{nice}": {
+          "description": "Amount of time spent processing niced user tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu.\\cpu\\.nice$",
     "description": "Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
@@ -164,7 +249,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "\\sum_{cpu}n_{BlockedProcesses}",
+    "formula": {
+      "equation": "\\sum_{cpu}n_{BlockedProcesses}",
+      "variables": {
+        "n_{BlockedProcesses}": {
+          "description": "Number of processes waiting for I/O operations to complete"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.procsBlocked$",
     "description": "Total number of processes waiting for I/O operations to complete, across all CPUs",
     "notes": "",
@@ -186,7 +278,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "\\sum_{cpu}n_{RunningProcesses}",
+    "formula": {
+      "equation": "\\sum_{cpu}n_{RunningProcesses}",
+      "variables": {
+        "n_{RunningProcesses}": {
+          "description": "Number of processes currently executing"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.procsRunning$",
     "description": "Total number of processes currently executing across all CPUs",
     "notes": "",
@@ -208,7 +307,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{softirq}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{softirq}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{softirq}": {
+          "description": "Amount of time spent processing software interrupts"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.softirq$",
     "description": "Average percentage of time spent dealing with software interrupts across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -222,7 +334,7 @@
       "http://linux.die.net/man/5/proc"
     ] 
   },
-  "cpu.cpu.steal" : {
+  "cpu.cpu.steal": {
     "displayName": "CPU Steal Percentage (Average)",
     "units": "CPU steal",
     "max": 1,
@@ -230,7 +342,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{steal}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{steal}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{steal}": {
+          "description": "Amount of time spent spent in involuntary wait"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.steal$",
     "description": "Average percentage of time spent in \"involuntary wait\" across all CPUs. This is time that can't be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -252,7 +377,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{system}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{system}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{system}": {
+          "description": "Amount of time spent processing system tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.system$",
     "description": "Average percentage of time spent executing processes in kernel mode, across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -274,7 +412,20 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{user}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{user}}{t_{up}}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
+        "t_{user}": {
+          "description": "Amount of time spent processing user tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.user$",
     "description": "Average percentage of time spent executing processes in user mode, across all CPUs",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -296,7 +447,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{guest}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{guest}}{t_{up}}",
+      "variables": {
+        "t_{guest}": {
+          "description": "Amount of time spent in guest mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.guest$",
     "description": "Percentage of time spent running a virtual CPU for a guest OS (virual machine)",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
@@ -318,7 +479,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{NiceGuest}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{NiceGuest}}{t_{up}}",
+      "variables": {
+        "t_{NiceGuest}": {
+          "description": "Amount of time spent in niced guest mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.guestNice$",
     "description": "Percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relationship to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
@@ -341,7 +512,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{idle}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{idle}}{t_{up}}",
+      "variables": {
+        "t_{idle}": {
+          "description": "Amount of time spent in idle mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.idle$",
     "description": "Percentage of time CPU spent idle",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -363,7 +544,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "n_{interrupt}",
+    "formula": {
+      "equation": "n_{interrupt}",
+      "variables": {
+        "n_{interrupt}": {
+          "description": "Number of interrupts"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.interrupts$", 
     "description": "Number of interrupts handled by CPU. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
     "notes": "",
@@ -386,7 +574,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{io}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{io}}{t_{up}}",
+      "variables": {
+        "t_{io}": {
+          "description": "Amount of time spent in guest mode"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.iowait$",
     "description": "Percentage of time processor is waiting for I/O operations to complete.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -408,7 +606,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{irq}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{irq}}{t_{up}}",
+      "variables": {
+        "t_{irq}": {
+          "description": "Amount of time spent processing hardware interrupts"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu.\\cpu\\d+\\.irq$",
     "description": "Percentage of time spent dealing with hardware interrupts",
     "notes": "Time is measxured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
@@ -430,7 +638,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{nice}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{nice}}{t_{up}}",
+      "variables": {
+        "t_{nice}": {
+          "description": "Amount of time spent processing niced user tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.nice$",
     "description": "Percentage of time executing tasks in user mode with a positive nice value (tasks with a low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
@@ -453,7 +671,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "n_{BlockedProcesses}",
+    "formula": {
+      "equation": "n_{BlockedProcesses}",
+      "variables": {
+        "n_{BlockedProcesses}": {
+          "description": "Number of processes waiting for I/O operations to complete"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.procsBlocked$",
     "description": "Number of processes currently waiting for I/O operation to complete.",
     "notes": "",
@@ -475,7 +700,14 @@
     "sigFigs": null,
     "dataType": "count",
     "type": "raw",
-    "formula": "n_{RunningProcesses}",
+    "formula": {
+      "equation": "n_{RunningProcesses}",
+      "variables": {
+        "n_{RunningProcesses}": {
+          "description": "Number of processes currently executing"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.procsRunning$",
     "description": "Number of processes currently executing on processor.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -497,7 +729,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{softirq}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{softirq}}{t_{up}}",
+      "variables": {
+        "t_{softirq}": {
+          "description": "Amount of time spent processing software interrupts"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.softirq$",
     "description": "Percentage of time spent dealing with software interrupts",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -519,7 +761,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{steal}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{steal}}{t_{up}}",
+      "variables": {
+        "t_{steal}": {
+          "description": "Amount of time spent in involuntary wait"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.steal$",
     "description": "Average percentage of time spent in \"involuntary wait\". This is time that can't be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -541,7 +793,17 @@
     "sigFigs": null,
     "dataType": "percentage", 
     "type": "derived",
-    "formula": "\\frac{t_{system}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{system}}{t_{up}}",
+      "variables": {
+        "t_{system}": {
+          "description": "Amount of time spent processing system tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.system$",
     "description": "Percentage of time processor has spent executing in kernel mode.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -563,7 +825,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "\\frac{t_{user}}{t_{up}}",
+    "formula": {
+      "equation": "\\frac{t_{user}}{t_{up}}",
+      "variables": {
+        "t_{user}": {
+          "description": "Amount of time spent processing user tasks"
+        },
+        "t_{up}": {
+          "description": "Amount of time since last reboot"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\d+\\.user$",
     "description": "Percentage of time spent executing processes in user mode.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
@@ -585,7 +857,17 @@
     "sigFigs": null,
     "dataType": "percentage",
     "type": "derived",
-    "formula": "1 - \\frac{t_{2, idle} - t_{1, idle}}{\\Delta t}",
+    "formula": {
+      "equation": "1 - \\frac{\\Delta t_{idle}}{\\Delta t}",
+      "variables": {
+        "\\Delta t_{idle}": {
+            "description": "Amount of time spent idle in time measured"
+        },
+        "\\Delta t": {
+          "description": "Amount of time measured"
+        }
+      }
+    },
     "variants": "cpu\\.cpu\\.utilization$",
     "description": "Percentage of the CPU's processing resources used between two timepoints.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.\nThere are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.",
