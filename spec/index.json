@@ -1,6 +1,6 @@
 {
   "cpu.cpu.guest": {
-    "display_name": "Guest Mode Percentage (Average)",
+    "displayName": "Guest Mode Percentage (Average)",
     "units": "guest mode",
     "max": 1,
     "min": 0,
@@ -22,7 +22,7 @@
     ]
   },
   "cpu.cpu.guestNice": {
-    "display_name": "Nice Guest Mode Percentage (Average)",
+    "displayName": "Nice Guest Mode Percentage (Average)",
     "units": "nice guest mode",
     "max": 1,
     "min": 0,
@@ -45,7 +45,7 @@
     ]
   },
   "cpu.cpu.idle": {
-    "display_name": "CPU Idle Percentage (Average)",
+    "displayName": "CPU Idle Percentage (Average)",
     "units": "idleness",
     "max": 1,
     "min": 0,
@@ -67,7 +67,7 @@
     ]
   },
   "cpu.cpu.interrupts": {
-    "display_name": "Interrupts (Average)",
+    "displayName": "Interrupts (Average)",
     "units": "interrupts",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -90,7 +90,7 @@
     ]
   },
   "cpu.cpu.iowait": {
-    "display_name": "I/O Wait Percentage (Average)",
+    "displayName": "I/O Wait Percentage (Average)",
     "units": "io wait",
     "max": 1,
     "min": 0,
@@ -112,7 +112,7 @@
     ]
   },
   "cpu.cpu.irq": {
-    "display_name": "Interrupt Mode Percentage (Average)",
+    "displayName": "Interrupt Mode Percentage (Average)",
     "units": "interrupt mode",
     "max": 1,
     "min": 0,
@@ -134,7 +134,7 @@
     ]
   },
   "cpu.cpu.nice": {
-    "display_name": "User Nice Mode Percentage (Average)",
+    "displayName": "User Nice Mode Percentage (Average)",
     "units": "user nice mode",
     "max": 1,
     "min": 0,
@@ -157,7 +157,7 @@
     ]
   },
   "cpu.cpu.procsBlocked": {
-    "display_name": "Blocked Processes",
+    "displayName": "Blocked Processes",
     "units": "processes",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -179,7 +179,7 @@
     ]
   },
   "cpu.cpu.procsRunning": {
-    "display_name": "Running Processes",
+    "displayName": "Running Processes",
     "units": "processes",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -201,7 +201,7 @@
     ]
   },
   "cpu.cpu.softirq": {
-    "display_name": "Software Interrupt Mode Percentage (Average)",
+    "displayName": "Software Interrupt Mode Percentage (Average)",
     "units": "software interrupt mode",
     "max": 1,
     "min": 0,
@@ -223,7 +223,7 @@
     ] 
   },
   "cpu.cpu.steal" : {
-    "display_name": "CPU Steal Percentage (Average)",
+    "displayName": "CPU Steal Percentage (Average)",
     "units": "CPU steal",
     "max": 1,
     "min": 0,
@@ -245,7 +245,7 @@
     ]
   },
   "cpu.cpu.system": {
-    "display_name": "System Mode Percentage (Average)",
+    "displayName": "System Mode Percentage (Average)",
     "units": "system mode",
     "max": 1,
     "min": 0, 
@@ -267,7 +267,7 @@
     ]
   },
   "cpu.cpu.user": {
-    "display_name": "User Mode Percentage (Average)",
+    "displayName": "User Mode Percentage (Average)",
     "units": "user mode",
     "max": 1,
     "min": 0,
@@ -289,7 +289,7 @@
     ]
   },
   "cpu.{cpucore}.guest": {
-    "display_name": "Guest Mode Percentage",
+    "displayName": "Guest Mode Percentage",
     "units": "guest mode",
     "max": 1,
     "min": 0,
@@ -311,7 +311,7 @@
     ]
   },
   "cpu.{cpucore}.guestNice": {
-    "display_name": "Nice Guest Mode Percentage",
+    "displayName": "Nice Guest Mode Percentage",
     "units": "nice guest mode",
     "max": 1,
     "min": 0,
@@ -334,7 +334,7 @@
     ]
   },
   "cpu.{cpucore}.idle": {
-    "display_name": "CPU Idle Percentage",
+    "displayName": "CPU Idle Percentage",
     "units": "idleness",
     "max": 1,
     "min": 0,
@@ -356,7 +356,7 @@
     ]
   },
   "cpu.{cpucore}.interrupts": {
-    "display_name": "Interrupts",
+    "displayName": "Interrupts",
     "units": "interrupts",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -379,7 +379,7 @@
     ]
   },
   "cpu.{cpucore}.iowait": {
-    "display_name": "I/O Wait Percentage",
+    "displayName": "I/O Wait Percentage",
     "units": "io wait",
     "max": 1,
     "min": 0,
@@ -401,7 +401,7 @@
     ]
   },
   "cpu.{cpucore}.irq": {
-    "display_name": "Interrupt Mode Percentage",
+    "displayName": "Interrupt Mode Percentage",
     "units": "interrupt mode",
     "max": 1,
     "min": 0,
@@ -423,7 +423,7 @@
     ]
   },
   "cpu.{cpucore}.nice": {
-    "display_name": "User Nice Mode Percentage",
+    "displayName": "User Nice Mode Percentage",
     "units": "user nice mode",
     "max": 1,
     "min": 0,
@@ -446,7 +446,7 @@
     ]
   },
   "cpu.{cpucore}.procsBlocked": {
-    "display_name": "Blocked Processes",
+    "displayName": "Blocked Processes",
     "units": "processes blocked",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -468,7 +468,7 @@
     ]
   },
   "cpu.{cpucore}.procsRunning": {
-    "display_name": "Running Processes",
+    "displayName": "Running Processes",
     "units": "processes running",
     "max": "MAX_UNSIGNED_LONG",
     "min": 0,
@@ -490,7 +490,7 @@
     ]
   },
   "cpu.{cpucore}.softirq": {
-    "display_name": "Software Interrupt Mode Percentage",
+    "displayName": "Software Interrupt Mode Percentage",
     "units": "software interrupt mode",
     "max": 1,
     "min": 0,
@@ -512,7 +512,7 @@
     ] 
   },
   "cpu.{cpucore}.steal": {
-    "display_name": "CPU Steal Percentage",
+    "displayName": "CPU Steal Percentage",
     "units": "CPU steal",
     "max": 1,
     "min": 0,
@@ -534,7 +534,7 @@
     ]
   },
   "cpu.{cpuscore}.system": {
-    "display_name": "System Mode Percentage",
+    "displayName": "System Mode Percentage",
     "units": "system mode",
     "max": 1,
     "min": 0,
@@ -556,7 +556,7 @@
     ]
   },
   "cpu.{cpucore}.user": {
-    "display_name": "User Mode Percentage",
+    "displayName": "User Mode Percentage",
     "units": "user mode",
     "max": 1,
     "min": 0,
@@ -578,7 +578,7 @@
     ]
   },
   "cpu.utilization": {
-    "display_name": "CPU Utilization",
+    "displayName": "CPU Utilization",
     "units": "utilization",
     "max": 1,
     "min": 0,
