@@ -606,7 +606,7 @@
     },
     "device": "cpu\\.(cpu\\d+)\\.irq$",
     "vendors": "*",
-    "classificiation": "cpu",
+    "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
     ]
@@ -637,7 +637,7 @@
     },
     "device": null,
     "vendors": "*",
-    "classificiation": "cpu",
+    "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
       "http://en.wikipedia.org/wiki/Nice_(Unix)"
