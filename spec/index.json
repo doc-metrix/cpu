@@ -561,7 +561,7 @@
       "equation": "\\frac{t_{io}}{t_{up}}",
       "variables": {
         "t_{io}": {
-          "description": "Amount of time spent in guest mode"
+          "description": "Amount of time spent waiting for I/O operations"
         },
         "t_{up}": {
           "description": "Amount of time since last reboot"
