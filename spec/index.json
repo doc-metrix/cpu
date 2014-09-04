@@ -1,5 +1,5 @@
 {
-  "cpu.cpu.guest": {
+  "cpu.guestAverage": {
     "displayName": "Guest Mode Percentage (Average)",
     "units": "guest mode",
     "max": 1,
@@ -33,7 +33,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.guestNice": {
+  "cpu.guestNiceAverage": {
     "displayName": "Nice Guest Mode Percentage (Average)",
     "units": "nice guest mode",
     "max": 1,
@@ -68,7 +68,7 @@
       "http://en.wikipedia.org/wiki/Nice_(Unix)"
     ]
   },
-  "cpu.cpu.idle": {
+  "cpu.idleAverage": {
     "displayName": "CPU Idle Percentage (Average)",
     "units": "idleness",
     "max": 1,
@@ -102,7 +102,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.interrupts": {
+  "cpu.interruptsAverage": {
     "displayName": "Interrupts (Average)",
     "units": "interrupts",
     "max": "MAX_UNSIGNED_LONG",
@@ -131,7 +131,7 @@
       "http://en.wikipedia.org/wiki/Interrupt"
     ]
   },
-  "cpu.cpu.iowait": {
+  "cpu.iowaitAverage": {
     "displayName": "I/O Wait Percentage (Average)",
     "units": "io wait",
     "max": 1,
@@ -165,7 +165,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.irq": {
+  "cpu.irqAverage": {
     "displayName": "Interrupt Mode Percentage (Average)",
     "units": "interrupt mode",
     "max": 1,
@@ -199,7 +199,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.nice": {
+  "cpu.niceAverage": {
     "displayName": "User Nice Mode Percentage (Average)",
     "units": "user nice mode",
     "max": 1,
@@ -234,7 +234,7 @@
       "http://en.wikipedia.org/wiki/Nice_(Unix)"
     ]
   },
-  "cpu.cpu.procsBlocked": {
+  "cpu.procsBlockedAverage": {
     "displayName": "Blocked Processes",
     "units": "processes",
     "max": "MAX_UNSIGNED_LONG",
@@ -262,7 +262,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.procsRunning": {
+  "cpu.procsRunningAverage": {
     "displayName": "Running Processes",
     "units": "processes",
     "max": "MAX_UNSIGNED_LONG",
@@ -290,7 +290,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.softirq": {
+  "cpu.softirqAverage": {
     "displayName": "Software Interrupt Mode Percentage (Average)",
     "units": "software interrupt mode",
     "max": 1,
@@ -324,7 +324,7 @@
       "http://linux.die.net/man/5/proc"
     ] 
   },
-  "cpu.cpu.steal": {
+  "cpu.stealAverage": {
     "displayName": "CPU Steal Percentage (Average)",
     "units": "CPU steal",
     "max": 1,
@@ -358,7 +358,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.system": {
+  "cpu.systemAverage": {
     "displayName": "System Mode Percentage (Average)",
     "units": "system mode",
     "max": 1,
@@ -392,7 +392,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.cpu.user": {
+  "cpu.userAverage": {
     "displayName": "User Mode Percentage (Average)",
     "units": "user mode",
     "max": 1,
@@ -426,7 +426,7 @@
         "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.guest": {
+  "cpu.guest": {
     "displayName": "Guest Mode Percentage",
     "units": "guest mode",
     "max": 1,
@@ -457,7 +457,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.guestNice": {
+  "cpu.guestNice": {
     "displayName": "Nice Guest Mode Percentage",
     "units": "nice guest mode",
     "max": 1,
@@ -489,7 +489,7 @@
       "http://en.wikipedia.org/wiki/Nice_(Unix)"
     ]
   },
-  "cpu.{cpucore}.idle": {
+  "cpu.idle": {
     "displayName": "CPU Idle Percentage",
     "units": "idleness",
     "max": 1,
@@ -520,7 +520,7 @@
         "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.interrupts": {
+  "cpu.interrupts": {
     "displayName": "Interrupts",
     "units": "interrupts",
     "max": "MAX_UNSIGNED_LONG",
@@ -549,7 +549,7 @@
       "http://en.wikipedia.org/wiki/Interrupt"
     ]
   },
-  "cpu.{cpucore}.iowait": {
+  "cpu.iowait": {
     "displayName": "I/O Wait Percentage",
     "units": "io wait",
     "max": 1,
@@ -580,7 +580,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.irq": {
+  "cpu.irq": {
     "displayName": "Interrupt Mode Percentage",
     "units": "interrupt mode",
     "max": 1,
@@ -611,7 +611,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.nice": {
+  "cpu.nice": {
     "displayName": "User Nice Mode Percentage",
     "units": "user nice mode",
     "max": 1,
@@ -643,7 +643,7 @@
       "http://en.wikipedia.org/wiki/Nice_(Unix)"
     ]
   },
-  "cpu.{cpucore}.procsBlocked": {
+  "cpu.procsBlocked": {
     "displayName": "Blocked Processes",
     "units": "processes blocked",
     "max": "MAX_UNSIGNED_LONG",
@@ -671,7 +671,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.procsRunning": {
+  "cpu.procsRunning": {
     "displayName": "Running Processes",
     "units": "processes running",
     "max": "MAX_UNSIGNED_LONG",
@@ -699,7 +699,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.softirq": {
+  "cpu.softirq": {
     "displayName": "Software Interrupt Mode Percentage",
     "units": "software interrupt mode",
     "max": 1,
@@ -730,7 +730,7 @@
       "http://linux.die.net/man/5/proc"
     ] 
   },
-  "cpu.{cpucore}.steal": {
+  "cpu.steal": {
     "displayName": "CPU Steal Percentage",
     "units": "CPU steal",
     "max": 1,
@@ -761,7 +761,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpuscore}.system": {
+  "cpu.system": {
     "displayName": "System Mode Percentage",
     "units": "system mode",
     "max": 1,
@@ -792,7 +792,7 @@
       "http://linux.die.net/man/5/proc"
     ]
   },
-  "cpu.{cpucore}.user": {
+  "cpu.user": {
     "displayName": "User Mode Percentage",
     "units": "user mode",
     "max": 1,
