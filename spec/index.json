@@ -385,7 +385,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
     },
-    "device": "cpu\\.(cpu)\\.cpu$",
+    "device": null,
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -419,7 +419,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
     },
-    "device": "cpu\\.(cpu)\\.user$",
+    "device": null,
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -450,7 +450,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.guest$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -481,7 +481,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.guestNice$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -513,7 +513,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.idle$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -541,7 +541,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.interrupts$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -573,7 +573,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.iowait$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -604,7 +604,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.irq$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -635,7 +635,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": null,
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -664,7 +664,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.procsBlocked$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -692,7 +692,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.procsRunning$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -723,7 +723,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.softirq$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -754,7 +754,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.steal$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "*",
     "refs": [
@@ -785,7 +785,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.system$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
@@ -816,7 +816,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
-    "device": "cpu\\.(cpu\\d+)\\.user$",
+    "device": "^cpu\\d+$",
     "vendors": "*",
     "classification": "cpu",
     "refs": [
