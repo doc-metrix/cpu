@@ -1,7 +1,7 @@
 {
   "cpu.guestAverage": {
     "displayName": "Guest Mode Percentage (Average)",
-    "units": "guest mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -35,7 +35,7 @@
   },
   "cpu.guestNiceAverage": {
     "displayName": "Nice Guest Mode Percentage (Average)",
-    "units": "nice guest mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -70,7 +70,7 @@
   },
   "cpu.idleAverage": {
     "displayName": "CPU Idle Percentage (Average)",
-    "units": "idleness",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -133,7 +133,7 @@
   },
   "cpu.iowaitAverage": {
     "displayName": "I/O Wait Percentage (Average)",
-    "units": "io wait",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -167,7 +167,7 @@
   },
   "cpu.irqAverage": {
     "displayName": "Interrupt Mode Percentage (Average)",
-    "units": "interrupt mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -201,7 +201,7 @@
   },
   "cpu.niceAverage": {
     "displayName": "User Nice Mode Percentage (Average)",
-    "units": "user nice mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -292,7 +292,7 @@
   },
   "cpu.softirqAverage": {
     "displayName": "Software Interrupt Mode Percentage (Average)",
-    "units": "software interrupt mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -326,7 +326,7 @@
   },
   "cpu.stealAverage": {
     "displayName": "CPU Steal Percentage (Average)",
-    "units": "CPU steal",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -360,7 +360,7 @@
   },
   "cpu.systemAverage": {
     "displayName": "System Mode Percentage (Average)",
-    "units": "system mode",
+    "units": "percent",
     "max": 1,
     "min": 0, 
     "sigFigs": null,
@@ -394,7 +394,7 @@
   },
   "cpu.userAverage": {
     "displayName": "User Mode Percentage (Average)",
-    "units": "user mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -428,7 +428,7 @@
   },
   "cpu.guest": {
     "displayName": "Guest Mode Percentage",
-    "units": "guest mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -459,7 +459,7 @@
   },
   "cpu.guestNice": {
     "displayName": "Nice Guest Mode Percentage",
-    "units": "nice guest mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -491,7 +491,7 @@
   },
   "cpu.idle": {
     "displayName": "CPU Idle Percentage",
-    "units": "idleness",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -551,7 +551,7 @@
   },
   "cpu.iowait": {
     "displayName": "I/O Wait Percentage",
-    "units": "io wait",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -582,7 +582,7 @@
   },
   "cpu.irq": {
     "displayName": "Interrupt Mode Percentage",
-    "units": "interrupt mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -613,7 +613,7 @@
   },
   "cpu.nice": {
     "displayName": "User Nice Mode Percentage",
-    "units": "user nice mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -701,7 +701,7 @@
   },
   "cpu.softirq": {
     "displayName": "Software Interrupt Mode Percentage",
-    "units": "software interrupt mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -732,7 +732,7 @@
   },
   "cpu.steal": {
     "displayName": "CPU Steal Percentage",
-    "units": "CPU steal",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -763,7 +763,7 @@
   },
   "cpu.system": {
     "displayName": "System Mode Percentage",
-    "units": "system mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
@@ -794,7 +794,7 @@
   },
   "cpu.user": {
     "displayName": "User Mode Percentage",
-    "units": "user mode",
+    "units": "percent",
     "max": 1,
     "min": 0,
     "sigFigs": null,
