@@ -56,7 +56,7 @@
       }
     },
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
-    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures.\nNice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
@@ -90,7 +90,7 @@
         }
       }
     },
-    "description": "Average percentage of time spent idle across all CPUs",
+    "description": "Average percentage of time spent idle across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
