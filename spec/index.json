@@ -244,16 +244,19 @@
     "min": 0,
     "sigFigs": null,
     "dataType": "count",
-    "type": "raw",
+    "type": "derived",
     "formula": {
-      "equation": "\\sum_{cpu}n_{BlockedProcesses}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}n_{BlockedProcesses}",
       "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
         "n_{BlockedProcesses}": {
           "description": "Number of processes waiting for I/O operations to complete"
         }
       }
     },
-    "description": "Total number of processes waiting for I/O operations to complete across all CPUs.",
+    "description": "Average number of processes waiting for I/O operations to complete across all CPUs.",
     "notes": "",
     "platforms": {
       "linux": ["/proc/stat"]
@@ -272,16 +275,19 @@
     "min": 0,
     "sigFigs": null,
     "dataType": "count",
-    "type": "raw",
+    "type": "derived",
     "formula": {
-      "equation": "\\sum_{cpu}n_{RunningProcesses}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}n_{RunningProcesses}",
       "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
         "n_{RunningProcesses}": {
           "description": "Number of processes currently executing"
         }
       }
     },
-    "description": "Total number of processes currently executing across all CPUs.",
+    "description": "Average number of processes currently executing across all CPUs.",
     "notes": "",
     "platforms": {
       "linux": ["/proc/stat"]

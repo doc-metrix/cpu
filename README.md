@@ -159,7 +159,7 @@ Min | Max | Units | Metric Type | Data Type
 
 Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).
 
-Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
@@ -179,7 +179,7 @@ Min | Max | Units | Metric Type | Data Type
 
 #### [cpu.procsBlockedAverage](http://linux.die.net/man/5/proc)
 
-Total number of processes waiting for I/O operations to complete across all CPUs.
+Average number of processes waiting for I/O operations to complete across all CPUs.
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
@@ -197,11 +197,11 @@ Min | Max | Units | Metric Type | Data Type
 
 #### [cpu.procsRunningAverage](http://linux.die.net/man/5/proc)
 
-Total number of processes currently executing across all CPUs.
+Average number of processes currently executing across all CPUs.
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
-0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+0 | `MAX_UNSIGNED_LONG` | processes | derived | [count](https://github.com/doc-metrix/data-types#count)
 
 
 
