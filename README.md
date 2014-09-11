@@ -6,11 +6,34 @@ CPU
 
 ## Metrics
 
+
+#### [cpu.guest](http://linux.die.net/man/5/proc)
+
+Percentage of time spent running a virtual CPU for a guest OS (virual machine).
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
 #### [cpu.guestAverage](http://linux.die.net/man/5/proc)
 
 Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) across all CPUs.
 
 Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.guestNice](http://linux.die.net/man/5/proc)
+
+Percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures. Nice values have an inverse relationship to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
@@ -29,6 +52,17 @@ Min | Max | Units | Metric Type | Data Type
 
 
 
+#### [cpu.idle](http://linux.die.net/man/5/proc)
+
+Percentage of time CPU spent idle.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
 #### [cpu.idleAverage](http://linux.die.net/man/5/proc)
 
 Average percentage of time spent idle across all CPUs.
@@ -38,6 +72,16 @@ Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `j
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
 0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.interrupts](http://linux.die.net/man/5/proc)
+
+Number of interrupts handled by CPU. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | `MAX_UNSIGNED_LONG` | interrupts | raw | [count](https://github.com/doc-metrix/data-types#count)
 
 
 
@@ -51,9 +95,33 @@ Min | Max | Units | Metric Type | Data Type
 
 
 
+#### [cpu.iowait](http://linux.die.net/man/5/proc)
+
+Percentage of time processor is waiting for I/O operations to complete.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
 #### [cpu.iowaitAverage](http://linux.die.net/man/5/proc)
 
 Average percentage of time processors are waiting for I/O operations, across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.irq](http://linux.die.net/man/5/proc)
+
+Percentage of time spent dealing with hardware interrupts.
 
 Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
 
@@ -73,6 +141,169 @@ Min | Max | Units | Metric Type | Data Type
 :---: | :---: | :---: | ---: | ---: |
 0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
 
+
+
+#### [cpu.nice](http://linux.die.net/man/5/proc)
+
+Percentage of time executing tasks in user mode with a positive nice value (tasks with a low priority).
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.niceAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).
+
+Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.procsBlocked](http://linux.die.net/man/5/proc)
+
+Number of processes currently waiting for I/O operation to complete.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+
+
+
+#### [cpu.procsBlockedAverage](http://linux.die.net/man/5/proc)
+
+Total number of processes waiting for I/O operations to complete across all CPUs.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+
+
+#### [cpu.procsRunning](http://linux.die.net/man/5/proc)
+
+Number of processes currently executing on processor.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+
+
+#### [cpu.procsRunningAverage](http://linux.die.net/man/5/proc)
+
+Total number of processes currently executing across all CPUs.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+
+
+
+#### [cpu.softirq](http://linux.die.net/man/5/proc)
+
+Percentage of time spent dealing with software interrupts.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.softirqAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent dealing with software interrupts across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.steal](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent in \"involuntary wait\". This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).
+
+Note: This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.stealAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent in "involuntary wait" across all CPUs. This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).
+
+Note: This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.system](http://linux.die.net/man/5/proc)
+
+Percentage of time processor has spent executing in kernel mode.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.systemAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent executing processes in kernel mode across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.user](http://linux.die.net/man/5/proc)
+
+Percentage of time processor has spent executing in user mode.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+#### [cpu.userAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent executing processes in user mode across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.utilization](http://linux.die.net/man/5/proc)
+
+Percentage of CPU processing resources used between two timepoints.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.  There are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | [utilization](https://github.com/doc-metrix/units#utilization) | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
 
 
 
