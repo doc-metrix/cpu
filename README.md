@@ -43,11 +43,37 @@ Min | Max | Units | Metric Type | Data Type
 
 #### [cpu.interruptsAverage](http://linux.die.net/man/5/proc)
 
-Aggregate number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.
+Average number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
 0 | `MAX_UNSIGNED_LONG` | interrupts | raw | [count](https://github.com/doc-metrix/data-types#count)
+
+
+
+#### [cpu.iowaitAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time processors are waiting for I/O operations, across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
+
+#### [cpu.irqAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of time spent dealing with hardware interrupts across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | percent | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
 
 
 

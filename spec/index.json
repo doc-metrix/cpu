@@ -118,7 +118,7 @@
         }
       }
     },
-    "description": "Aggregate number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
+    "description": "Average number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
     "notes": "",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo"]
@@ -153,7 +153,7 @@
         }
       }
     },
-    "description": "Average percentage of time processors are waiting for I/O operations, across all CPUs",
+    "description": "Average percentage of time processors are waiting for I/O operations, across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo", "/proc/uptime"]
@@ -187,8 +187,8 @@
         }
       }
     },
-    "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs",
-    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
+    "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
