@@ -183,7 +183,7 @@ Average number of processes waiting for I/O operations to complete across all CP
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
-0 | `MAX_UNSIGNED_LONG` | processes | raw | [count](https://github.com/doc-metrix/data-types#count)
+0 | `MAX_UNSIGNED_LONG` | processes | derived | [count](https://github.com/doc-metrix/data-types#count)
 
 
 #### [cpu.procsRunning](http://linux.die.net/man/5/proc)
