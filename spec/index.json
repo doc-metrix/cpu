@@ -109,10 +109,13 @@
     "min": 0,
     "sigFigs": null,
     "dataType": "count",
-    "type": "raw",
+    "type": "derived",
     "formula": {
-      "equation": "\\sum_{cpu}n_{interrupt}",
+      "equation": "\\frac{1}{n_{cpu}\\sum_{cpu}n_{interrupt}",
       "variables": {
+        "n_{cpu}": {
+          "description": "Number of CPU cores"
+        },
         "n_{interrupt}": {
             "description": "Number of interrupts"
         }

@@ -91,7 +91,7 @@ Average number of interrupts across all CPUs. An interrupt occurs when hardware 
 
 Min | Max | Units | Metric Type | Data Type 
 :---: | :---: | :---: | ---: | ---: |
-0 | `MAX_UNSIGNED_LONG` | interrupts | raw | [count](https://github.com/doc-metrix/data-types#count)
+0 | `MAX_UNSIGNED_LONG` | interrupts | derived | [count](https://github.com/doc-metrix/data-types#count)
 
 
 
