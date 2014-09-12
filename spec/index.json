@@ -11,13 +11,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{guest}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{guest}": {
-          "description": "Amount of time spent in guest mode"
+          "description": "the amount of time spent in guest mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -45,13 +45,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{NiceGuest}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{NiceGuest}": {
-          "description": "Amount of time spent in niced guest mode"
+          "description": "the amount of time spent in niced guest mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -80,13 +80,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{idle}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{idle}": {
-          "description": "Amount of time spent in idle mode"
+          "description": "the amount of time spent in idle mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -114,10 +114,10 @@
       "equation": "\\frac{1}{n_{cpu}\\sum_{cpu}n_{interrupt}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "n_{interrupt}": {
-            "description": "Number of interrupts"
+            "description": "the number of interrupts"
         }
       }
     },
@@ -143,20 +143,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{idle}": {
-          "description": "Amount of time spent waiting for I/O operations"
+          "description": "the amount of time spent waiting for I/O operations"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
-    "description": "Average percentage of time processors are waiting for I/O operations, across all CPUs.",
+    "description": "Average percentage of time processors are waiting for I/O operations across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo", "/proc/uptime"]
@@ -180,13 +180,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\frac{t_{interrupt}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{irq}": {
-          "description": "Amount of time spent processing hardware interrupts"
+          "description": "the amount of time spent processing hardware interrupts"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -214,13 +214,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\frac{t_{nice}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{nice}": {
-          "description": "Amount of time spent processing niced user tasks"
+          "description": "the amount of time spent processing niced user tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -249,10 +249,10 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}n_{BlockedProcesses}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "n_{BlockedProcesses}": {
-          "description": "Number of processes waiting for I/O operations to complete"
+          "description": "the number of processes waiting for I/O operations to complete"
         }
       }
     },
@@ -280,10 +280,10 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}n_{RunningProcesses}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "n_{RunningProcesses}": {
-          "description": "Number of processes currently executing"
+          "description": "the number of processes currently executing"
         }
       }
     },
@@ -311,13 +311,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{softirq}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{softirq}": {
-          "description": "Amount of time spent processing software interrupts"
+          "description": "the amount of time spent processing software interrupts"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -345,13 +345,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{steal}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{steal}": {
-          "description": "Amount of time spent spent in involuntary wait"
+          "description": "the amount of time spent spent in involuntary wait"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -379,13 +379,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{system}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{system}": {
-          "description": "Amount of time spent processing system tasks"
+          "description": "the amount of time spent processing system tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -413,13 +413,13 @@
       "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{user}}{t_{up}}",
       "variables": {
         "n_{cpu}": {
-          "description": "Number of CPU cores"
+          "description": "the number of CPU cores"
         },
         "t_{user}": {
-          "description": "Amount of time spent processing user tasks"
+          "description": "the amount of time spent processing user tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -447,10 +447,10 @@
       "equation": "\\frac{t_{guest}}{t_{up}}",
       "variables": {
         "t_{guest}": {
-          "description": "Amount of time spent in guest mode"
+          "description": "the amount of time spent in guest mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -478,10 +478,10 @@
       "equation": "\\frac{t_{NiceGuest}}{t_{up}}",
       "variables": {
         "t_{NiceGuest}": {
-          "description": "Amount of time spent in niced guest mode"
+          "description": "the amount of time spent in niced guest mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -510,10 +510,10 @@
       "equation": "\\frac{t_{idle}}{t_{up}}",
       "variables": {
         "t_{idle}": {
-          "description": "Amount of time spent in idle mode"
+          "description": "the amount of time spent in idle mode"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -541,7 +541,7 @@
       "equation": "n_{interrupt}",
       "variables": {
         "n_{interrupt}": {
-          "description": "Number of interrupts"
+          "description": "the number of interrupts"
         }
       }
     },
@@ -570,10 +570,10 @@
       "equation": "\\frac{t_{io}}{t_{up}}",
       "variables": {
         "t_{io}": {
-          "description": "Amount of time spent waiting for I/O operations"
+          "description": "the amount of time spent waiting for I/O operations"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -601,10 +601,10 @@
       "equation": "\\frac{t_{irq}}{t_{up}}",
       "variables": {
         "t_{irq}": {
-          "description": "Amount of time spent processing hardware interrupts"
+          "description": "the amount of time spent processing hardware interrupts"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -632,10 +632,10 @@
       "equation": "\\frac{t_{nice}}{t_{up}}",
       "variables": {
         "t_{nice}": {
-          "description": "Amount of time spent processing niced user tasks"
+          "description": "the amount of time spent processing niced user tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -664,7 +664,7 @@
       "equation": "n_{BlockedProcesses}",
       "variables": {
         "n_{BlockedProcesses}": {
-          "description": "Number of processes waiting for I/O operations to complete"
+          "description": "the number of processes waiting for I/O operations to complete"
         }
       }
     },
@@ -692,7 +692,7 @@
       "equation": "n_{RunningProcesses}",
       "variables": {
         "n_{RunningProcesses}": {
-          "description": "Number of processes currently executing"
+          "description": "the number of processes currently executing"
         }
       }
     },
@@ -720,10 +720,10 @@
       "equation": "\\frac{t_{softirq}}{t_{up}}",
       "variables": {
         "t_{softirq}": {
-          "description": "Amount of time spent processing software interrupts"
+          "description": "the amount of time spent processing software interrupts"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -751,10 +751,10 @@
       "equation": "\\frac{t_{steal}}{t_{up}}",
       "variables": {
         "t_{steal}": {
-          "description": "Amount of time spent in involuntary wait"
+          "description": "the amount of time spent in involuntary wait"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -782,10 +782,10 @@
       "equation": "\\frac{t_{system}}{t_{up}}",
       "variables": {
         "t_{system}": {
-          "description": "Amount of time spent processing system tasks"
+          "description": "the amount of time spent processing system tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -813,10 +813,10 @@
       "equation": "\\frac{t_{user}}{t_{up}}",
       "variables": {
         "t_{user}": {
-          "description": "Amount of time spent processing user tasks"
+          "description": "the amount of time spent processing user tasks"
         },
         "t_{up}": {
-          "description": "Amount of time since last reboot"
+          "description": "the amount of time since last reboot"
         }
       }
     },
@@ -844,10 +844,10 @@
       "equation": "1 - \\frac{\\Delta t_{idle}}{\\Delta t}",
       "variables": {
         "\\Delta t_{idle}": {
-            "description": "Amount of time spent idle in time measured"
+            "description": "the amount of time spent idle in time measured"
         },
         "\\Delta t": {
-          "description": "Amount of time measured"
+          "description": "the amount of time measured"
         }
       }
     },

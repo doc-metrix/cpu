@@ -229,7 +229,7 @@ Min | Max | Units | Metric Type | Data Type
 
 #### [cpu.steal](http://linux.die.net/man/5/proc)
 
-Average percentage of time spent in \"involuntary wait\". This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).
+Average percentage of time spent in "involuntary wait". This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).
 
 Note: This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
 
