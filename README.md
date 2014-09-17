@@ -306,6 +306,17 @@ Min | Max | Units | Metric Type | Data Type
 0 | 1 | [utilization](https://github.com/doc-metrix/units#utilization) | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
 
 
+#### [cpu.utilizationAverage](http://linux.die.net/man/5/proc)
+
+Average percentage of CPU processing resources used between two timepoints across all CPUs.
+
+Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.  There are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.
+
+Min | Max | Units | Metric Type | Data Type 
+:---: | :---: | :---: | ---: | ---: |
+0 | 1 | [utilization](https://github.com/doc-metrix/units#utilization) | derived | [percentage](https://github.com/doc-metrix/data-types#percentage)
+
+
 
 
 ===

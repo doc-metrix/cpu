@@ -26,8 +26,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -60,8 +59,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -95,8 +93,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -126,8 +123,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -161,8 +157,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -195,8 +190,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -229,8 +223,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -261,8 +254,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -292,8 +284,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -326,8 +317,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -360,8 +350,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -394,8 +383,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -428,11 +416,44 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": null,
     "classification": "cpu",
     "refs": [
         "http://linux.die.net/man/5/proc"
+    ]
+  },
+  "cpu.utilizationAverage": {
+    "displayName": "CPU Utilization (Average)",
+    "units": "utilization",
+    "max": 1,
+    "min": 0,
+    "sigFigs": null,
+    "dataType": "percentage",
+    "type": "derived",
+    "formula": {
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}1 - \\frac{\\Delta t_{idle}}{\\Delta t}",
+      "variables": {
+        "n_{cpu}": {
+          "description": "the number of CPU cores"
+        },
+        "\\Delta t_{idle}": {
+            "description": "the amount of time spent idle in time measured"
+        },
+        "\\Delta t": {
+          "description": "the amount of time measured"
+        }
+      }
+    },
+    "description": "Average percentage of CPU processing resources used between two timepoints across all CPUs.",
+    "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. There are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.",
+    "platforms": {
+      "linux": ["/proc/stat"]
+    },
+    "devices": null,
+    "classification": "cpu",
+    "refs": [
+      "http://linux.die.net/man/5/proc",
+      "http://www.design-reuse.com/articles/8289/how-to-calculate-cpu-utilization.html"
     ]
   },
   "cpu.guest": {
@@ -459,8 +480,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -490,8 +510,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -522,8 +541,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
         "http://linux.die.net/man/5/proc"
@@ -550,8 +568,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -582,8 +599,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -613,8 +629,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -644,8 +659,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
@@ -673,8 +687,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -701,8 +714,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -732,8 +744,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -763,8 +774,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/uptime"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "*",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -794,8 +804,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -825,8 +834,7 @@
     "platforms": {
       "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
-    "device": "^cpu\\d+$",
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc"
@@ -856,8 +864,7 @@
     "platforms": {
       "linux": ["/proc/stat"]
     },
-    "device": null,
-    "vendors": "*",
+    "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
       "http://linux.die.net/man/5/proc",
