@@ -9,7 +9,7 @@ CPU
 
 #### [cpu.guest](http://linux.die.net/man/5/proc)
 
-Percentage of time spent running a virtual CPU for a guest OS (virual machine).
+Percentage of time spent running a virtual CPU for a guest OS (virtual machine).
 
 Note: Time is measured in units of `USER_HZ`, which is 1/100th of a second (a `jiffy`) on most architectures.
 
