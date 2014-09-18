@@ -8,23 +8,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{guest}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{guest}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{guest}": {
-          "description": "the amount of time spent in guest mode"
+        "\\Delta t_{guest}": {
+          "description": "the amount of time spent in guest mode during the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -41,23 +41,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{NiceGuest}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{NiceGuest}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{NiceGuest}": {
-          "description": "the amount of time spent in niced guest mode"
+        "\\Delta t_{NiceGuest}": {
+          "description": "the amount of time spent in niced guest mode during the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -75,23 +75,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{idle}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{idle}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{idle}": {
-          "description": "the amount of time spent in idle mode"
+        "\\Delta t_{idle}": {
+          "description": "the amount of time spent in idle mode during the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent idle across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -139,23 +139,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{io}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{io}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{idle}": {
-          "description": "the amount of time spent waiting for I/O operations"
+        "\\Delta t_{idle}": {
+          "description": "the amount of time spent waiting for I/O operations in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time processors are waiting for I/O operations across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -172,23 +172,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\frac{t_{interrupt}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\frac{\\Delta t_{interrupt}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{irq}": {
-          "description": "the amount of time spent processing hardware interrupts"
+        "\\Delta t_{irq}": {
+          "description": "the amount of time spent processing hardware interrupts in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -205,23 +205,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\frac{t_{nice}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\frac{\\Delta t_{nice}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{nice}": {
-          "description": "the amount of time spent processing niced user tasks"
+        "\\Delta t_{nice}": {
+          "description": "the amount of time spent processing niced user tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -299,23 +299,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{softirq}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{softirq}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{softirq}": {
-          "description": "the amount of time spent processing software interrupts"
+        "\\Delta t_{softirq}": {
+          "description": "the amount of time spent processing software interrupts in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent dealing with software interrupts across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -332,23 +332,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{steal}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{steal}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{steal}": {
-          "description": "the amount of time spent spent in involuntary wait"
+        "\\Delta t_{steal}": {
+          "description": "the amount of time spent spent in involuntary wait in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent in \"involuntary wait\" across all CPUs. This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/uptime"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -365,23 +365,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{system}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{system}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{system}": {
-          "description": "the amount of time spent processing system tasks"
+        "\\Delta t_{system}": {
+          "description": "the amount of time spent processing system tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent executing processes in kernel mode across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -398,23 +398,23 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{t_{user}}{t_{up}}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\frac{\\Delta t_{user}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "t_{user}": {
-          "description": "the amount of time spent processing user tasks"
+        "\\Delta t_{user}": {
+          "description": "the amount of time spent processing user tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent executing processes in user mode across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo", "/proc/cpuinfo"]
+      "linux": ["/proc/stat", "/proc/cpuinfo"]
     },
     "devices": null,
     "classification": "cpu",
@@ -465,20 +465,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{guest}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{guest}}{\\Delta t}",
       "variables": {
-        "t_{guest}": {
-          "description": "the amount of time spent in guest mode"
+        "\\Delta t_{guest}": {
+          "description": "the amount of time spent in guest mode in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time spent running a virtual CPU for a guest OS (virual machine).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -495,13 +495,13 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{NiceGuest}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{NiceGuest}}{\\Delta t}",
       "variables": {
-        "t_{NiceGuest}": {
-          "description": "the amount of time spent in niced guest mode"
+        "\\Delta t_{NiceGuest}": {
+          "description": "the amount of time spent in niced guest mode in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
@@ -526,20 +526,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{idle}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{idle}}{\\Delta t}",
       "variables": {
-        "t_{idle}": {
-          "description": "the amount of time spent in idle mode"
+        "\\Delta t_{idle}": {
+          "description": "the amount of time spent in idle mode in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time CPU spent idle.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -584,20 +584,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{io}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{io}}{\\Delta t}",
       "variables": {
-        "t_{io}": {
-          "description": "the amount of time spent waiting for I/O operations"
+        "\\Delta t_{io}": {
+          "description": "the amount of time spent waiting for I/O operations in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time processor is waiting for I/O operations to complete.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -614,20 +614,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{irq}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{irq}}{\\Delta t}",
       "variables": {
-        "t_{irq}": {
-          "description": "the amount of time spent processing hardware interrupts"
+        "\\Delta t_{irq}": {
+          "description": "the amount of time spent processing hardware interrupts in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time spent dealing with hardware interrupts.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -644,20 +644,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{nice}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{nice}}{\\Delta t}",
       "variables": {
-        "t_{nice}": {
-          "description": "the amount of time spent processing niced user tasks"
+        "\\Delta t_{nice}": {
+          "description": "the amount of time spent processing niced user tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time executing tasks in user mode with a positive nice value (tasks with a low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -729,20 +729,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{softirq}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{softirq}}{\\Delta t}",
       "variables": {
-        "t_{softirq}": {
-          "description": "the amount of time spent processing software interrupts"
+        "\\Delta t_{softirq}": {
+          "description": "the amount of time spent processing software interrupts in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Percentage of time spent dealing with software interrupts.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
@@ -759,20 +759,20 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{steal}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{steal}}{\\Delta t}",
       "variables": {
-        "t_{steal}": {
-          "description": "the amount of time spent in involuntary wait"
+        "\\Delta t_{steal}": {
+          "description": "the amount of time spent in involuntary wait in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
     "description": "Average percentage of time spent in \"involuntary wait\". This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
     "platforms": {
-      "linux": ["/proc/stat", "/proc/uptime"]
+      "linux": ["/proc/stat"]
     },
     "devices": ["cpu\\d+"],
     "classification": "*",
@@ -789,13 +789,13 @@
     "dataType": "percentage", 
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{system}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{system}}{\\Delta t}",
       "variables": {
-        "t_{system}": {
-          "description": "the amount of time spent processing system tasks"
+        "\\Delta t_{system}": {
+          "description": "the amount of time spent processing system tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
@@ -819,13 +819,13 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{t_{user}}{t_{up}}",
+      "equation": "\\frac{\\Delta t_{user}}{\\Delta t}",
       "variables": {
-        "t_{user}": {
-          "description": "the amount of time spent processing user tasks"
+        "\\Delta t_{user}": {
+          "description": "the amount of time spent processing user tasks in the time measured"
         },
-        "t_{up}": {
-          "description": "the amount of time since last reboot"
+        "\\Delta t": {
+          "description": "the amount of time measured"
         }
       }
     },
