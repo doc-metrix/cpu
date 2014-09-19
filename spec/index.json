@@ -14,10 +14,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{guest}": {
-          "description": "the amount of time spent in guest mode during the time measured"
+          "description": "the amount of time spent in guest mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -47,10 +47,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{NiceGuest}": {
-          "description": "the amount of time spent in niced guest mode during the time measured"
+          "description": "the amount of time spent in nice guest mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -81,10 +81,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{idle}": {
-          "description": "the amount of time spent in idle mode during the time measured"
+          "description": "the amount of time spent in idle mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -144,11 +144,11 @@
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
-        "\\Delta t_{idle}": {
-          "description": "the amount of time spent waiting for I/O operations in the time measured"
+        "\\Delta t_{io}": {
+          "description": "the amount of time spent waiting for I/O operations during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -172,16 +172,16 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\frac{\\Delta t_{interrupt}}{\\Delta t}",
+      "equation": "\\frac{1}{n_{cpu}}\\frac{\\Delta t_{irq}}{\\Delta t}",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
         "\\Delta t_{irq}": {
-          "description": "the amount of time spent processing hardware interrupts in the time measured"
+          "description": "the amount of time spent processing hardware interrupts during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -211,10 +211,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{nice}": {
-          "description": "the amount of time spent processing niced user tasks in the time measured"
+          "description": "the amount of time spent processing niced user tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -305,10 +305,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{softirq}": {
-          "description": "the amount of time spent processing software interrupts in the time measured"
+          "description": "the amount of time spent processing software interrupts during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -338,10 +338,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{steal}": {
-          "description": "the amount of time spent spent in involuntary wait in the time measured"
+          "description": "the amount of time spent spent in involuntary wait during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -371,10 +371,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{system}": {
-          "description": "the amount of time spent processing system tasks in the time measured"
+          "description": "the amount of time spent processing system tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -404,10 +404,10 @@
           "description": "the number of CPU cores"
         },
         "\\Delta t_{user}": {
-          "description": "the amount of time spent processing user tasks in the time measured"
+          "description": "the amount of time spent processing user tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -431,16 +431,16 @@
     "dataType": "percentage",
     "type": "derived",
     "formula": {
-      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}1 - \\frac{\\Delta t_{idle}}{\\Delta t}",
+      "equation": "\\frac{1}{n_{cpu}}\\sum_{cpu}\\left(1 - \\frac{\\Delta t_{idle}}{\\Delta t}\\right)",
       "variables": {
         "n_{cpu}": {
           "description": "the number of CPU cores"
         },
         "\\Delta t_{idle}": {
-            "description": "the amount of time spent idle in time measured"
+            "description": "the amount of time spent idle during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -468,10 +468,10 @@
       "equation": "\\frac{\\Delta t_{guest}}{\\Delta t}",
       "variables": {
         "\\Delta t_{guest}": {
-          "description": "the amount of time spent in guest mode in the time measured"
+          "description": "the amount of time spent in guest mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -498,10 +498,10 @@
       "equation": "\\frac{\\Delta t_{NiceGuest}}{\\Delta t}",
       "variables": {
         "\\Delta t_{NiceGuest}": {
-          "description": "the amount of time spent in niced guest mode in the time measured"
+          "description": "the amount of time spent in niced guest mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -529,10 +529,10 @@
       "equation": "\\frac{\\Delta t_{idle}}{\\Delta t}",
       "variables": {
         "\\Delta t_{idle}": {
-          "description": "the amount of time spent in idle mode in the time measured"
+          "description": "the amount of time spent in idle mode during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -587,10 +587,10 @@
       "equation": "\\frac{\\Delta t_{io}}{\\Delta t}",
       "variables": {
         "\\Delta t_{io}": {
-          "description": "the amount of time spent waiting for I/O operations in the time measured"
+          "description": "the amount of time spent waiting for I/O operations during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -617,10 +617,10 @@
       "equation": "\\frac{\\Delta t_{irq}}{\\Delta t}",
       "variables": {
         "\\Delta t_{irq}": {
-          "description": "the amount of time spent processing hardware interrupts in the time measured"
+          "description": "the amount of time spent processing hardware interrupts during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -647,10 +647,10 @@
       "equation": "\\frac{\\Delta t_{nice}}{\\Delta t}",
       "variables": {
         "\\Delta t_{nice}": {
-          "description": "the amount of time spent processing niced user tasks in the time measured"
+          "description": "the amount of time spent processing niced user tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -732,10 +732,10 @@
       "equation": "\\frac{\\Delta t_{softirq}}{\\Delta t}",
       "variables": {
         "\\Delta t_{softirq}": {
-          "description": "the amount of time spent processing software interrupts in the time measured"
+          "description": "the amount of time spent processing software interrupts during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -762,10 +762,10 @@
       "equation": "\\frac{\\Delta t_{steal}}{\\Delta t}",
       "variables": {
         "\\Delta t_{steal}": {
-          "description": "the amount of time spent in involuntary wait in the time measured"
+          "description": "the amount of time spent in involuntary wait during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -792,10 +792,10 @@
       "equation": "\\frac{\\Delta t_{system}}{\\Delta t}",
       "variables": {
         "\\Delta t_{system}": {
-          "description": "the amount of time spent processing system tasks in the time measured"
+          "description": "the amount of time spent processing system tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -822,10 +822,10 @@
       "equation": "\\frac{\\Delta t_{user}}{\\Delta t}",
       "variables": {
         "\\Delta t_{user}": {
-          "description": "the amount of time spent processing user tasks in the time measured"
+          "description": "the amount of time spent processing user tasks during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
@@ -852,10 +852,10 @@
       "equation": "1 - \\frac{\\Delta t_{idle}}{\\Delta t}",
       "variables": {
         "\\Delta t_{idle}": {
-            "description": "the amount of time spent idle in time measured"
+            "description": "the amount of time spent idle during a measurement interval"
         },
         "\\Delta t": {
-          "description": "the amount of time measured"
+          "description": "the measurement interval"
         }
       }
     },
