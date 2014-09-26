@@ -7,7 +7,7 @@
 
 	URLs.readme = 'https://api.github.com/repos/doc-metrix/cpu/contents/README.md';
 	URLs.markdown = 'https://api.github.com/markdown';
-	URLs.spec = 'https://api.github.com/repos/doc-metrix/cpu/contents/spec/index.json';
+	URLs.doc = 'https://api.github.com/repos/doc-metrix/cpu/contents/doc/index.json';
 
 	CONTEXT = 'doc-metrix/cpu';
 
@@ -114,40 +114,40 @@
 	*/
 	function onResource( html ) {
 		document.getElementById( 'readme' ).innerHTML = html;
-		getSpec();
+		getDoc();
 	} // end FUNCTION onResource()
 
 	/**
-	* FUNCTION: getSpec()
-	*	Retrieves a metric specification.
+	* FUNCTION: getDoc()
+	*	Retrieves metric documentation.
 	*
 	* @private
 	*/
-	function getSpec() {
-		getResource( URLs.spec, onSpec );
-	} // end FUNCTION getSpec()
+	function getDoc() {
+		getResource( URLs.doc, onDoc );
+	} // end FUNCTION getDoc()
 
 	/**
-	* FUNCTION: onSpec( blob )
-	*	Handler for receiving a spec resource.
+	* FUNCTION: onDoc( blob )
+	*	Handler for receiving a documentation resource.
 	*
 	* @private
 	* @param {String} blob - content blob which will be parsed as JSON
 	*/
-	function onSpec( blob ) {
-		var spec = JSON.parse( window.atob( JSON.parse( blob ).content ) );
-		getFormulas( spec );
-	} // end FUNCTION onSpec()
+	function onDoc( blob ) {
+		var doc = JSON.parse( window.atob( JSON.parse( blob ).content ) );
+		getFormulas( doc );
+	} // end FUNCTION onDoc()
 
 	/**
-	* FUNCTION: getFormulas( spec )
-	*	Extracts formulas from the specification and inserts them into the DOM.
+	* FUNCTION: getFormulas( doc )
+	*	Extracts formulas from the documentation and inserts them into the DOM.
 	*
 	* @private
-	* @param {Object} spec - metric specification
+	* @param {Object} doc - metric documentation
 	*/
-	function getFormulas( spec ) {
-		var keys = Object.keys( spec ),
+	function getFormulas( doc ) {
+		var keys = Object.keys( doc ),
 			cache = [],
 			name,
 			metric,
@@ -163,7 +163,7 @@
 
 		// Slugify the keys, lowercase, and extract the formula:
 		for ( var i = 0; i < keys.length; i++ ) {
-			metric = spec[ keys[ i ] ];
+			metric = doc[ keys[ i ] ];
 			formula = metric.formula;
 			if ( formula ) {
 				name = keys[ i ]
