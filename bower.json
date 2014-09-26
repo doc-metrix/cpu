@@ -1,21 +1,20 @@
 {
   "name": "doc-metrix-cpu",
   "version": "0.0.1",
-  "description": "A specification for CPU performance metrics.",
+  "description": "Documentation for CPU performance metrics.",
   "authors": [
     {
       "name": "Andrew Krause",
       "email": "andrew@nodeprime.com"
     }
   ],
-  "main": "spec/index.json",
+  "main": "doc/index.json",
   "repository": {
     "type": "git",
     "url": "git://github.com/doc-metrix/cpu.git"
   },
   "keywords": [
     "doc-metrix",
-    "specification",
     "cpu",
     "metrics",
     "documentation"

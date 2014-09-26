@@ -23,9 +23,6 @@
     },
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -56,9 +53,6 @@
     },
     "description": "Average percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most archictures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -90,9 +84,6 @@
     },
     "description": "Average percentage of time spent idle across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -120,9 +111,6 @@
     },
     "description": "Average number of interrupts across all CPUs. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -154,9 +142,6 @@
     },
     "description": "Average percentage of time processors are waiting for I/O operations across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -187,9 +172,6 @@
     },
     "description": "Average percentage of time spent dealing with hardware interrupts across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -220,9 +202,6 @@
     },
     "description": "Average percentage of time executing tasks in user mode with a positive nice value (tasks with low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -251,9 +230,6 @@
     },
     "description": "Average number of processes waiting for I/O operations to complete across all CPUs.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -281,9 +257,6 @@
     },
     "description": "Average number of processes currently executing across all CPUs.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -314,9 +287,6 @@
     },
     "description": "Average percentage of time spent dealing with software interrupts across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -347,9 +317,6 @@
     },
     "description": "Average percentage of time spent in \"involuntary wait\" across all CPUs. This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -380,9 +347,6 @@
     },
     "description": "Average percentage of time spent executing processes in kernel mode across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -413,9 +377,6 @@
     },
     "description": "Average percentage of time spent executing processes in user mode across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -446,9 +407,6 @@
     },
     "description": "Average percentage of CPU processing resources used between two timepoints across all CPUs.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. There are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": null,
     "classification": "cpu",
     "refs": [
@@ -477,9 +435,6 @@
     },
     "description": "Percentage of time spent running a virtual CPU for a guest OS (virtual machine).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -507,9 +462,6 @@
     },
     "description": "Percentage of time spent running a virtual CPU for a guest OS (virtual machine) with a positive niceness value (low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. Nice values have an inverse relationship to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -538,9 +490,6 @@
     },
     "description": "Percentage of time CPU spent idle.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -565,9 +514,6 @@
     },
     "description": "Number of interrupts handled by CPU. An interrupt occurs when hardware or software sends a signal to the processor telling it to temporarily halt what it is currently executing and perform some other task.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -596,9 +542,6 @@
     },
     "description": "Percentage of time processor is waiting for I/O operations to complete.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -626,9 +569,6 @@
     },
     "description": "Percentage of time spent dealing with hardware interrupts.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -656,9 +596,6 @@
     },
     "description": "Percentage of time executing tasks in user mode with a positive nice value (tasks with a low priority).",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. Nice values have an inverse relation to priority: processes with highly positive nice values are lower priority, while those with negative nice values are high priority. This value is used by the OS when scheduling tasks for an overloaded processor.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -684,9 +621,6 @@
     },
     "description": "Number of processes currently waiting for I/O operation to complete.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -711,9 +645,6 @@
     },
     "description": "Number of processes currently executing on processor.",
     "notes": "",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -741,9 +672,6 @@
     },
     "description": "Percentage of time spent dealing with software interrupts.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -771,9 +699,6 @@
     },
     "description": "Average percentage of time spent in \"involuntary wait\". This is time that cannot be classified in one of the other categories (e.g. system, idle, etc).",
     "notes": "This is most often only an issue when multiple VMs are running on the same physical machine. If a VM has tasks that can run, but it is unable to run them because the hypervisor is dedicating CPU time to another VM, this will show up as CPU steal. Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "*",
     "refs": [
@@ -801,9 +726,6 @@
     },
     "description": "Percentage of time processor has spent executing in kernel mode.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -831,9 +753,6 @@
     },
     "description": "Percentage of time spent executing processes in user mode.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures.",
-    "platforms": {
-      "linux": ["/proc/stat", "/proc/cpuinfo"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
@@ -861,9 +780,6 @@
     },
     "description": "Percentage of CPU processing resources used between two timepoints.",
     "notes": "Time is measured in units of USER_HZ, which is 1/100th of a second (a jiffy) on most architectures. There are multiple ways of calculating this metric, mainly in determining what counts as non-idle time.",
-    "platforms": {
-      "linux": ["/proc/stat"]
-    },
     "devices": ["cpu\\d+"],
     "classification": "cpu",
     "refs": [
